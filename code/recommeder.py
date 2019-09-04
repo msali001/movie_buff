@@ -110,7 +110,7 @@ if(choice==1):
     indices = pd.Series(df2.index, index=df2['title'])
 
     mv=input("Enter the movie: ")
-    get_recommendations(mv, cosine_sim2)
+    print(get_recommendations(mv, cosine_sim2))
 
 if(choice==2):
 
