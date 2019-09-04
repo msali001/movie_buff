@@ -7,8 +7,8 @@ https://www.kaggle.com/rounakbanik/the-movies-dataset
 
 HOW TO RUN:
 In case of using the kaggle kernel:
-recommender1.ipynb, recommender2.ipynb 
-Here data set can be loaded as default. Both types of recommendations is done as a separate interactive python notebook.
+recommender_main.ipynb
+Here data set can be loaded as default. Recommendations are done on an interactive python notebook.
 
 In case of running in CPU(Enough computational power needed)(Recommended):
 recommender.py
