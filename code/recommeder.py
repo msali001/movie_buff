@@ -13,6 +13,7 @@ df2=pd.read_csv('../nlp_internship/dataset/movies_metadata.csv')
 df4=pd.read_csv('../nlp_internship/dataset/keywords.csv')
 
 
+
 df2 = df2[df2.id!='1997-08-20']
 df2 = df2[df2.id!='2012-09-29']
 df2 = df2[df2.id!='2014-01-01']
@@ -21,7 +22,7 @@ df2['id'] = df2['id'].astype(int)
 
 df2=df2.merge(df1, on='id')
 
-choice=int(input("Choose which sort of recommendation you need:\n1.Similar movie based on a particular movie \n2.Based on movie popularity and/or genre \n"))
+choice=int(input("Choose which sort of recommendation you need:\n1.Similar movie based on a Particular Movie \n2.Based on Movie Popularity and/or Genre \n"))
 
 if(choice==1):
     tfidf = TfidfVectorizer(stop_words='english')
@@ -109,7 +110,7 @@ if(choice==1):
     df2 = df2.reset_index()
     indices = pd.Series(df2.index, index=df2['title'])
 
-    mv=input("Enter the movie: ")
+    mv=input("Enter the Movie: ")
     print(get_recommendations(mv, cosine_sim2))
 
 if(choice==2):
@@ -130,5 +131,5 @@ if(choice==2):
     q_movies = q_movies.sort_values('score', ascending=False)
 
 
-    n=int(input("List of how much top movies do you want: "))
+    n=int(input("List of how much Top Movies do you want: "))
     print(q_movies[['title', 'vote_count', 'vote_average', 'score']].head(n))
